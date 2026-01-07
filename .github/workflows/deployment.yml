@@ -17,11 +17,9 @@ jobs:
               working-directory: ./02 Starting Project
               run: npm test
     deploy:
+        needs: test
         runs-on: ubuntu-latest
         steps:
-            - name: Build Project
-              working-directory: ./02 Starting Project
-              run: npm build
             - name: Deploy
               run: echo "deploying.."
 
